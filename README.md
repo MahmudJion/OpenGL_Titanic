@@ -1,7 +1,7 @@
 # Open_gl_Titanic
 An open_gl graphics game in C++
 
-##A little Info on Glut32 and FreeGlut
+## A little Info on Glut32 and FreeGlut
 
 The original Glut32 written by Mark Kilgard was ported over by Nate Robins. And you can get the ported Glut32 Binaries if you want to see it.
 
