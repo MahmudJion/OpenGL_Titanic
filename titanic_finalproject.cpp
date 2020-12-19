@@ -10,13 +10,13 @@ int w =  1000;
 int flag=0;
 
 float lightX=4;
-
 float SceneX = 0;
 float IceX = 5;
 float IceY =0;
 float CloudX = 0;
 float _angle = 0.0;
 float ShipY = 1.5;
+
 bool collide= false;
 bool ice1=true;
 bool ice2 =false;
@@ -25,22 +25,25 @@ bool ship2 = false;
 bool End = false;
 bool Day = true;
 bool start = false;
+
 int skyR = 42;
 int SkyG = 237;
 int SkyB  =204;
+
 int sunR=252;
 int sunG=212;
 int sunB = 64;
 int sunX = 3;
+
 int oceanR=40;
 int oceanG=95;
 int oceanB =183;
+
 int lightz=5;
 
 int slghtR = 40;
 int slghtG = 95;
 int slghtB = 183;
-
 
 
 bool CheckCollision(){
@@ -73,9 +76,8 @@ glutStrokeCharacter(GLUT_STROKE_ROMAN,'N');
 glutStrokeCharacter(GLUT_STROKE_ROMAN,'I');
 glutStrokeCharacter(GLUT_STROKE_ROMAN,'C');
 glPopMatrix();
- glFlush();
+glFlush();
 }
-
 
 void keyboardown(int key, int x, int y)
 {
@@ -102,7 +104,6 @@ void keyboardown(int key, int x, int y)
 
 }
 
-
 void ice(){
 glColor3ub(176,252,244);
 glBegin(GL_POLYGON);
@@ -110,7 +111,6 @@ glVertex2f(0,1.5);
 glVertex2f(0,3);
 glVertex2f(1,4);
 glVertex2f(1,1.5);
-
 glEnd();
 
 glBegin(GL_POLYGON);
@@ -130,7 +130,7 @@ glEnd();
 }
 
 void DrawMountain(){
-    float TriangleY = 3;
+float TriangleY = 3;
 float TriangleX1 = -5;
 float TriangleX2 = -4.5;
 float TriangleX3 =-4;
@@ -159,9 +159,7 @@ glTranslatef(-.2,1.2,0);
 DrawMountain();
 glPopMatrix();
 
-
 //(R,G,B)
-
 glPushMatrix();  //yellow mountain
 glColor4ub(22,142,34,255);
 glScalef(2,.8,0);
@@ -185,7 +183,7 @@ glPopMatrix();
 }
 
 void ocean(){
-    int y =2;
+int y =2;
 glColor3ub(oceanR,oceanG,oceanB);
 glBegin(GL_POLYGON);
 glVertex2f(-w/(2*100),-y);
@@ -198,7 +196,7 @@ glEnd();
 
 
 void sky(){
-    int y =2;
+int y =2;
 glColor3ub(skyR,SkyG,SkyB);
 glBegin(GL_POLYGON);
 glVertex2f(-w/(2*100),y);
@@ -208,9 +206,6 @@ glVertex2f(w/(2*100),y);
 glEnd();
 
 }
-
-
-
 
 void drawship(){
 
@@ -227,7 +222,6 @@ glVertex2f(0,0);
 glVertex2f(.07,-.2);
 glVertex2f(1.68,-.2);
 glVertex2f(1.72,0);
-
 
 glColor3ub(slghtR, slghtG, slghtB);//ship light
 glBegin(GL_POLYGON);
@@ -337,14 +331,12 @@ glVertex2f(.9,.9);
 glVertex2f(.75,.6);
 glVertex2f(.75,.5);
 
-
 glEnd();
 
 }
 
 
 void drawsun(){
-
 
 glColor3ub(sunR, sunG, sunB);
 glPushMatrix();
@@ -605,27 +597,20 @@ void myDisplayFunction(void)
 {
 	glClear(GL_COLOR_BUFFER_BIT);
 	glLoadIdentity();
-gluOrtho2D(-(w/2)/100,(w/2)/100,(-h/2)/100,(h/2)/100);
-glColor3ub(255,255,255);
-//	glBegin(GL_POLYGON);
-//
-//glVertex2f(0,0);
-//glVertex2f(.75,0);
-//glVertex2f(.75,.75);
-//
-//	glEnd();
-glPushMatrix();
-glTranslatef(-3.5,0,0);
-glScalef(.01,.01,0);
-glutStrokeCharacter(GLUT_STROKE_ROMAN,'M');
-glutStrokeCharacter(GLUT_STROKE_ROMAN,'A');
-glutStrokeCharacter(GLUT_STROKE_ROMAN,'Y');
-glutStrokeCharacter(GLUT_STROKE_ROMAN,'D');
-glutStrokeCharacter(GLUT_STROKE_ROMAN,'A');
-glutStrokeCharacter(GLUT_STROKE_ROMAN,'Y');
-glutStrokeCharacter(GLUT_STROKE_ROMAN,'!');
-glutStrokeCharacter(GLUT_STROKE_ROMAN,'!');
-glPopMatrix();
+    gluOrtho2D(-(w/2)/100,(w/2)/100,(-h/2)/100,(h/2)/100);
+    glColor3ub(255,255,255);
+    glPushMatrix();
+    glTranslatef(-3.5,0,0);
+    glScalef(.01,.01,0);
+    glutStrokeCharacter(GLUT_STROKE_ROMAN,'M');
+    glutStrokeCharacter(GLUT_STROKE_ROMAN,'A');
+    glutStrokeCharacter(GLUT_STROKE_ROMAN,'Y');
+    glutStrokeCharacter(GLUT_STROKE_ROMAN,'D');
+    glutStrokeCharacter(GLUT_STROKE_ROMAN,'A');
+    glutStrokeCharacter(GLUT_STROKE_ROMAN,'Y');
+    glutStrokeCharacter(GLUT_STROKE_ROMAN,'!');
+    glutStrokeCharacter(GLUT_STROKE_ROMAN,'!');
+    glPopMatrix();
 	glFlush();
 	glutSwapBuffers();
 }
@@ -637,14 +622,13 @@ int winner()
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	//glutInitWindowSize(1360, 750);
 	glutCreateWindow("End");
-glutInitWindowSize(h, w);
-glutInitWindowPosition(0, 0);
-glClearColor(0.0, 0.0, 0.0, 1.0);
-
+    glutInitWindowSize(h, w);
+    glutInitWindowPosition(0, 0);
+    glClearColor(0.0, 0.0, 0.0, 1.0);
 
 	glutDisplayFunc(myDisplayFunction);
-//	gluOrtho2D(-(w/2)/100,(w/2)/100,(-h/2)/100,(h/2)/100);
-glutFullScreen();
+    //gluOrtho2D(-(w/2)/100,(w/2)/100,(-h/2)/100,(h/2)/100);
+    glutFullScreen();
 	glutMainLoop();
 
 	return 0;
@@ -691,7 +675,6 @@ glLoadIdentity();
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 gluOrtho2D(-(w/2)/100,(w/2)/100,(-h/2)/100,(h/2)/100);
 }
-
 
 void update(int value) {
     _angle -= .5f;
@@ -767,22 +750,23 @@ void mainmenu(int id)
 		    //NIGHT
 		    Day =false;
 		    if(!Day){
-skyR=45;
-SkyG=104;
-SkyB=103;
-sunR=254;
-sunG=252;
-sunB =215;
-sunX = - 3;
-oceanR=24;
-oceanG=57;
-oceanB=109;
-lightz=0;
-slghtR = 222;
-slghtG = 249;
-slghtB = 71;
 
-		glutPostRedisplay();
+            skyR=45;
+            SkyG=104;
+            SkyB=103;
+            sunR=254;
+            sunG=252;
+            sunB =215;
+            sunX = - 3;
+            oceanR=24;
+            oceanG=57;
+            oceanB=109;
+            lightz=0;
+            slghtR = 222;
+            slghtG = 249;
+            slghtB = 71;
+
+            glutPostRedisplay();
 		    }
 
 			break;
