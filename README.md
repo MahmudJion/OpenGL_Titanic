@@ -1,4 +1,4 @@
-# OpenGl_Titanic
+# OpenGL_Titanic
 An open_gl graphics game in C++
 
 ## A little Info on Glut32 and FreeGlut
